@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.env
+.telemetry
+
+# Virtual environments
+**/.venv
+# DuckDB files
+*.duckdb
+
+## dagster components
+history/
+schedules/
+storage/
+logs/
+*.log*
+.nux/

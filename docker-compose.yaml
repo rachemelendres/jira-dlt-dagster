@@ -1,0 +1,22 @@
+services:
+  dagster:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DAGSTER_HOME=/opt/dagster/app
+    image: dagster:latest
+    volumes:
+      - .:/opt/dagster/app/
+    ports:
+      - "3000:3000"
+
+  duckdb:
+    build:
+      context: .
+      dockerfile: Dockerfile_duckdb
+    image: duckdb:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app/
